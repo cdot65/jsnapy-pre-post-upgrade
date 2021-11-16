@@ -1,0 +1,8 @@
+ospf-neighbor-information:
+    ospf-neighbor:
+        activity-timer: '37'
+        interface-name: ge-0/0/7.0
+        neighbor-address: 74.51.192.0
+        neighbor-id: 192.168.255.230
+        neighbor-priority: '128'
+        ospf-neighbor-state: Full

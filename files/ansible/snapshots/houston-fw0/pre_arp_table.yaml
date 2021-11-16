@@ -1,0 +1,33 @@
+arp-table-information:
+    arp-entry-count: '6'
+    arp-table-entry:
+    -   arp-table-entry-flags:
+            permanent: ''
+        interface-name: ge-0/0/4.10
+        ip-address: 10.1.10.254
+        mac-address: 08:b2:58:a5:9c:a2
+    -   arp-table-entry-flags:
+            permanent: ''
+        interface-name: ge-0/0/4.20
+        ip-address: 10.1.20.254
+        mac-address: 08:b2:58:a5:9c:a2
+    -   arp-table-entry-flags:
+            permanent: ''
+        interface-name: ge-0/0/4.30
+        ip-address: 10.1.30.254
+        mac-address: 08:b2:58:a5:9c:a2
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/7.0
+        ip-address: 74.51.192.0
+        mac-address: 30:7c:5e:3e:53:90
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/0.0
+        ip-address: 192.168.105.1
+        mac-address: d0:dd:49:71:3e:07
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/0.0
+        ip-address: 192.168.105.77
+        mac-address: 00:50:56:b2:86:55

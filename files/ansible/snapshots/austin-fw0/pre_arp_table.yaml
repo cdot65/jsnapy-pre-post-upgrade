@@ -1,0 +1,18 @@
+arp-table-information:
+    arp-entry-count: '3'
+    arp-table-entry:
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/7.0
+        ip-address: 190.221.165.0
+        mac-address: 30:7c:5e:3e:53:91
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/0.0
+        ip-address: 192.168.105.1
+        mac-address: d0:dd:49:71:3e:07
+    -   arp-table-entry-flags:
+            none: ''
+        interface-name: ge-0/0/0.0
+        ip-address: 192.168.105.77
+        mac-address: 00:50:56:b2:86:55

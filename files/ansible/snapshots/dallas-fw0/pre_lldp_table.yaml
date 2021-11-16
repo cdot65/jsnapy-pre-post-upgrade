@@ -1,0 +1,14 @@
+lldp-neighbors-information:
+    lldp-neighbor-information:
+    -   lldp-local-parent-interface-name: '-'
+        lldp-local-port-id: ge-0/0/0
+        lldp-remote-chassis-id: 30:7c:5e:3e:53:f0
+        lldp-remote-chassis-id-subtype: Mac address
+        lldp-remote-port-description: lonestar-br0-fw0
+        lldp-remote-system-name: colo-rt0.dmz.home
+    -   lldp-local-parent-interface-name: '-'
+        lldp-local-port-id: ge-0/0/7
+        lldp-remote-chassis-id: f4:cc:55:bc:1a:80
+        lldp-remote-chassis-id-subtype: Mac address
+        lldp-remote-port-description: dallas-fw0
+        lldp-remote-system-name: endor

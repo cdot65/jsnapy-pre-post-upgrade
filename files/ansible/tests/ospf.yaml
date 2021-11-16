@@ -1,0 +1,40 @@
+tests_include:
+  - check_ospf_austin_fw0
+  - check_ospf_dallas_fw0
+  - check_ospf_houston_fw0
+
+### ---------------------------------------------------------------------------------
+### Assert OSPF adjacency is up with austin-fw0
+### ---------------------------------------------------------------------------------
+check_ospf_austin_fw0:
+  - command: show ospf neighbor 190.221.165.1
+
+  - item:
+      xpath: '//ospf-neighbor-information/ospf-neighbor'
+      tests:
+        - is-equal: ospf-neighbor-state, Full
+          err: Neighbor austin-fw0 on interface {{post['interface-name']}} is in {{post['ospf-neighbor-state']}} State (Established Full)
+
+### ---------------------------------------------------------------------------------
+### Assert OSPF adjacency is up with dallas-fw0
+### ---------------------------------------------------------------------------------
+check_ospf_dallas_fw0:
+  - command: show ospf neighbor 216.227.251.1
+
+  - item:
+      xpath: '//ospf-neighbor-information/ospf-neighbor'
+      tests:
+        - is-equal: ospf-neighbor-state, Full
+          err: Neighbor dallas-fw0 on interface {{post['interface-name']}} is in {{post['ospf-neighbor-state']}} State (Established Full)
+
+### ---------------------------------------------------------------------------------
+### Assert ospf adjacency is up with houston-fw0
+### ---------------------------------------------------------------------------------
+check_ospf_houston_fw0:
+  - command: show ospf neighbor 74.51.192.1
+
+  - item:
+      xpath: '//ospf-neighbor-information/ospf-neighbor'
+      tests:
+        - is-equal: ospf-neighbor-state, Full
+          err: Neighbor houston-fw0 on interface {{post['interface-name']}} is in {{post['ospf-neighbor-state']}} State (Established Full)

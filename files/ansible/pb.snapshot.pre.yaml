@@ -1,0 +1,89 @@
+### ---------------------------------------------------------------------------
+### JSNAPY TESTS
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  become: False
+  roles: 
+    - juniper.junos
+  vars:
+    snapshot_directory: "snapshots"
+    provider_info:
+      user: "automation"
+      passwd: "juniper123"
+  tasks:
+
+    ### ------------------------------------------------------------
+    ### RETRIEVE ARP TABLE AND WRITE OUTPUT TO FILES
+    ### ------------------------------------------------------------
+    - name: "### RETRIEVE ARP TABLE ###"
+      juniper_junos_rpc:
+        host: "{{ inventory_hostname }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+        rpc: get-arp-table-information
+        kwargs:
+          no-resolve: True
+        format: xml
+      register: pre_arp_table
+
+    - name: "### WRITE OUTPUT TO FILES ###"
+      local_action:
+        module: copy
+        content: "{{ pre_arp_table['parsed_output'] | to_nice_yaml }}"
+        dest: "{{ snapshot_directory }}/{{ inventory_hostname }}/pre_arp_table.yaml"
+
+    ### ------------------------------------------------------------
+    ### RETRIEVE LLDP NEIGHBORS AND WRITE OUTPUT TO FILES
+    ### ------------------------------------------------------------
+    - name: "### RETRIEVE LLDP NEIGHBORS ###"
+      juniper_junos_rpc:
+        host: "{{ inventory_hostname }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+        rpc: get-lldp-neighbors-information
+        format: xml
+      register: pre_lldp_table
+
+    - name: "### WRITE OUTPUT TO FILES ###"
+      local_action:
+        module: copy
+        content: "{{ pre_lldp_table['parsed_output'] | to_nice_yaml }}"
+        dest: "{{ snapshot_directory }}/{{ inventory_hostname }}/pre_lldp_table.yaml"
+
+    ### ------------------------------------------------------------
+    ### RETRIEVE BGP NEIGHBORS AND WRITE OUTPUT TO FILES
+    ### ------------------------------------------------------------
+    - name: "### RETRIEVE BGP NEIGHBORS ###"
+      juniper_junos_rpc:
+        host: "{{ inventory_hostname }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+        rpc: get-bgp-neighbor-information
+        format: xml
+      register: pre_bgp_neighbor
+
+    - name: "### WRITE OUTPUT TO FILES ###"
+      local_action:
+        module: copy
+        content: "{{ pre_bgp_neighbor['parsed_output'] | to_nice_yaml }}"
+        dest: "{{ snapshot_directory }}/{{ inventory_hostname }}/pre_bgp_neighbor.yaml"
+
+    ### ------------------------------------------------------------
+    ### RETRIEVE OSPF NEIGHBORS AND WRITE OUTPUT TO FILES
+    ### ------------------------------------------------------------
+    - name: "### RETRIEVE OSPF NEIGHBORS ###"
+      juniper_junos_rpc:
+        host: "{{ inventory_hostname }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+        rpc: get-ospf-neighbor-information
+        format: xml
+      register: pre_ospf_neighbor
+
+    - name: "### WRITE OUTPUT TO FILES ###"
+      local_action:
+        module: copy
+        content: "{{ pre_ospf_neighbor['parsed_output'] | to_nice_yaml }}"
+        dest: "{{ snapshot_directory }}/{{ inventory_hostname }}/pre_ospf_neighbor.yaml"

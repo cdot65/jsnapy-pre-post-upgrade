@@ -1,0 +1,8 @@
+---
+all:
+  children:
+    routers:
+      hosts:
+        dallas-fw0:
+        austin-fw0:
+        houston-fw0:

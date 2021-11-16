@@ -1,0 +1,11 @@
+tests_include:
+  - test_flap_count
+
+test_flap_count:
+  - rpc: get-arp-table-information
+  - iterate:
+      xpath: '//arp-table-information'
+      tests:
+        - all-same: flap-count
+          err: "Test Failed!!! flap count are all same, it is <{{post['flap-count']}}>!! "
+          info: "Test Succeeded!! flap count are all different <{{post['flap-count']}}>!!!"

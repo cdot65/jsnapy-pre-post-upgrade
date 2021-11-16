@@ -1,0 +1,20 @@
+lldp-neighbors-information:
+    lldp-neighbor-information:
+    -   lldp-local-parent-interface-name: '-'
+        lldp-local-port-id: ge-0/0/0
+        lldp-remote-chassis-id: 28:a2:4b:80:14:50
+        lldp-remote-chassis-id-subtype: Mac address
+        lldp-remote-port-description: brew-oob
+        lldp-remote-system-name: coruscant
+    -   lldp-local-parent-interface-name: '-'
+        lldp-local-port-id: ge-0/0/7
+        lldp-remote-chassis-id: 30:7c:5e:3e:53:f0
+        lldp-remote-chassis-id-subtype: Mac address
+        lldp-remote-port-description: ge-0/1/3
+        lldp-remote-system-name: colo-rt0.dmz.home
+    -   lldp-local-parent-interface-name: '-'
+        lldp-local-port-id: ge-0/0/5
+        lldp-remote-chassis-id: f0:4b:3a:7b:e6:97
+        lldp-remote-chassis-id-subtype: Mac address
+        lldp-remote-port-description: ge-1/0/11
+        lldp-remote-system-name: austin-vc0

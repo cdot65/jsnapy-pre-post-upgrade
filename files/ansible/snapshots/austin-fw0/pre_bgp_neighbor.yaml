@@ -1,0 +1,178 @@
+bgp-information:
+    bgp-peer:
+    -   active-holdtime: '90'
+        bgp-bfd:
+            bfd-configuration-state: disabled
+            bfd-operational-state: down
+        bgp-error:
+            name: Open Message Error
+            receive-count: '0'
+            send-count: '1'
+        bgp-option-information:
+            address-families: inet-vpn-unicast
+            bgp-options: Preference LocalAddress AddressFamily Rib-group Refresh
+            bgp-options-extended: GracefulShutdownRcv
+            bgp-options2: ''
+            gshut-recv-local-preference: '0'
+            holdtime: '90'
+            local-address: 192.168.255.220
+            preference: '170'
+        bgp-output-queue:
+            count: '0'
+            number: '2'
+            rib-adv-nlri: inet-vpn-unicast
+            table-name: redtail.inet.0
+        bgp-peer-iosession:
+            iosession-state: Enabled
+            iosession-thread-name: bgpio-0
+        bgp-rib:
+        -   accepted-prefix-count: '1'
+            active-prefix-count: '1'
+            bgp-rib-state: BGP restart is complete
+            name: bgp.l3vpn.0
+            received-prefix-count: '1'
+            send-state: not advertising
+            suppressed-prefix-count: '0'
+            vpn-rib-state: VPN restart is complete
+        -   accepted-prefix-count: '1'
+            active-prefix-count: '1'
+            advertised-prefix-count: '4'
+            bgp-rib-state: BGP restart is complete
+            name: redtail.inet.0
+            received-prefix-count: '1'
+            rib-bit: '30000'
+            send-state: in sync
+            suppressed-prefix-count: '0'
+            vpn-rib-state: VPN restart is complete
+        flap-count: '0'
+        group-index: '0'
+        input-messages: '3092'
+        input-octets: '58865'
+        input-refreshes: '0'
+        input-updates: '2'
+        keepalive-interval: '30'
+        last-checked: '83735'
+        last-error: Open Message Error
+        last-event: RecvKeepAlive
+        last-received: '6'
+        last-sent: '6'
+        last-state: OpenConfirm
+        local-address: 192.168.255.220+179
+        local-as: '65000'
+        local-ext-nh-color-nlri: inet-vpn-unicast
+        local-id: 192.168.255.220
+        nlri-type-peer: inet-vpn-unicast
+        nlri-type-session: inet-vpn-unicast
+        output-messages: '3091'
+        output-octets: '58850'
+        output-refreshes: '0'
+        output-updates: '1'
+        peer-4byte-as-capability-advertised: '65000'
+        peer-addpath-not-supported: ''
+        peer-address: 192.168.255.200+58678
+        peer-as: '65000'
+        peer-cfg-rti: master
+        peer-end-of-rib-received: inet-vpn-unicast
+        peer-end-of-rib-scheduled: ''
+        peer-end-of-rib-sent: inet-vpn-unicast
+        peer-flags: Sync
+        peer-fwd-rti: master
+        peer-group: mpls_wan
+        peer-id: 192.168.255.200
+        peer-index: '1'
+        peer-no-llgr-restarter: ''
+        peer-no-restart: ''
+        peer-refresh-capability: '2'
+        peer-restart-flags-received: Notification
+        peer-restart-nlri-configured: inet-vpn-unicast
+        peer-restart-nlri-negotiated: inet-vpn-unicast
+        peer-stale-route-time-configured: '300'
+        peer-state: Established
+        peer-type: Internal
+        snmp-index: '1'
+    -   active-holdtime: '90'
+        bgp-bfd:
+            bfd-configuration-state: disabled
+            bfd-operational-state: down
+        bgp-option-information:
+            address-families: inet-vpn-unicast
+            bgp-options: Preference LocalAddress AddressFamily Rib-group Refresh
+            bgp-options-extended: GracefulShutdownRcv
+            bgp-options2: ''
+            gshut-recv-local-preference: '0'
+            holdtime: '90'
+            local-address: 192.168.255.220
+            preference: '170'
+        bgp-output-queue:
+            count: '0'
+            number: '2'
+            rib-adv-nlri: inet-vpn-unicast
+            table-name: redtail.inet.0
+        bgp-peer-iosession:
+            iosession-state: Enabled
+            iosession-thread-name: bgpio-0
+        bgp-rib:
+        -   accepted-prefix-count: '6'
+            active-prefix-count: '6'
+            bgp-rib-state: BGP restart is complete
+            name: bgp.l3vpn.0
+            received-prefix-count: '6'
+            send-state: not advertising
+            suppressed-prefix-count: '0'
+            vpn-rib-state: VPN restart is complete
+        -   accepted-prefix-count: '6'
+            active-prefix-count: '6'
+            advertised-prefix-count: '4'
+            bgp-rib-state: BGP restart is complete
+            name: redtail.inet.0
+            received-prefix-count: '6'
+            rib-bit: '30000'
+            send-state: in sync
+            suppressed-prefix-count: '0'
+            vpn-rib-state: VPN restart is complete
+        flap-count: '0'
+        group-index: '0'
+        input-messages: '6370'
+        input-octets: '121228'
+        input-refreshes: '0'
+        input-updates: '2'
+        keepalive-interval: '30'
+        last-checked: '172597'
+        last-error: None
+        last-event: RecvKeepAlive
+        last-received: '9'
+        last-sent: '22'
+        last-state: OpenConfirm
+        local-address: 192.168.255.220+179
+        local-as: '65000'
+        local-ext-nh-color-nlri: inet-vpn-unicast
+        local-id: 192.168.255.220
+        nlri-type-peer: inet-vpn-unicast
+        nlri-type-session: inet-vpn-unicast
+        output-messages: '6387'
+        output-octets: '121474'
+        output-refreshes: '0'
+        output-updates: '1'
+        peer-4byte-as-capability-advertised: '65000'
+        peer-addpath-not-supported: ''
+        peer-address: 192.168.255.210+54844
+        peer-as: '65000'
+        peer-cfg-rti: master
+        peer-end-of-rib-received: inet-vpn-unicast
+        peer-end-of-rib-scheduled: ''
+        peer-end-of-rib-sent: inet-vpn-unicast
+        peer-flags: Sync
+        peer-fwd-rti: master
+        peer-group: mpls_wan
+        peer-id: 192.168.255.210
+        peer-index: '0'
+        peer-no-llgr-restarter: ''
+        peer-no-restart: ''
+        peer-refresh-capability: '2'
+        peer-restart-flags-received: Notification
+        peer-restart-nlri-configured: inet-vpn-unicast
+        peer-restart-nlri-negotiated: inet-vpn-unicast
+        peer-stale-route-time-configured: '300'
+        peer-state: Established
+        peer-type: Internal
+        snmp-index: '0'

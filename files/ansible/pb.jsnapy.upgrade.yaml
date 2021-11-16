@@ -1,0 +1,51 @@
+### ---------------------------------------------------------------------------
+### JSNAPY TESTS
+### ---------------------------------------------------------------------------
+- hosts: all
+  connection: local
+  gather_facts: False
+  become: False
+  roles: 
+    - juniper.junos
+  vars:
+    provider_info:
+      host: "{{ inventory_hostname }}"
+      user: "automation"
+      passwd: "juniper123"
+  tasks:
+
+
+    - name: "Collect Pre Snapshot"
+      juniper_junos_jsnapy:
+        # define remote device parameters
+        host: "{{ ansible_host }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+
+        action: "snap_pre"
+        test_files: "tests/bgp-state.yaml"
+
+    - name: "Collect Post Snapshot"
+      juniper_junos_jsnapy:
+        # define remote device parameters
+        host: "{{ ansible_host }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+
+        action: "snap_post"
+        test_files: "tests/bgp-state.yaml"
+
+    - name: "Check after Pre and Post Snapshots"
+      juniper_junos_jsnapy:
+        # define remote device parameters
+        host: "{{ ansible_host }}"
+        user: "{{ provider_info.user }}"
+        passwd: "{{ provider_info.passwd }}"
+
+        action: "check"
+        test_files: "tests/bgp-state.yaml"
+      register: test3
+
+    - name: Print the full test response
+      debug:
+        var: test3
